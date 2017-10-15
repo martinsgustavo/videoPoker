@@ -2,6 +2,7 @@
 import UIKit
 //----------------------//----------------------
 class ViewController: UIViewController {
+    @IBOutlet weak var tempLabel: UILabel!
     //---
     @IBOutlet weak var slot_1: UIImageView!
     @IBOutlet weak var slot_2: UIImageView!
@@ -47,7 +48,11 @@ class ViewController: UIViewController {
     //---
     var chances = 2
     //---
-    var pokerHands = PokerHands()
+    let pokerHands = PokerHands()
+    //---
+    var handToAnalyse = [(0, ""), (0, ""), (0, ""), (0, ""), (0, "")]
+    //---
+    var theHand = [(Int, String)]()
     //------------------------------------------
     override func viewDidLoad() {
         //---
@@ -154,6 +159,19 @@ class ViewController: UIViewController {
             chances = chances - 1
         }
         //---
+        var allSelected = true
+        for slotAnimation in arrOfSlotImageViews {
+            if slotAnimation.layer.borderWidth != 1.0 {
+                allSelected = false
+                break
+            }
+        }
+        //---
+        if allSelected {
+            displayRandomCards()
+            return
+        }
+        //---
         for slotAnimation in arrOfSlotImageViews {
             if slotAnimation.layer.borderWidth != 1.0 {
                 slotAnimation.startAnimating()
@@ -168,39 +186,116 @@ class ViewController: UIViewController {
     //------------------------------------------
     @objc func displayRandomCards() { //<<<<<<<<<<
         //---
-        var h = [(Int, String)]()
+        theHand = returnRandomHand()
         //---
-        var originalDeck = deckOfCards
+        let arrOfCards = createCards(theHand: theHand)
         //---
-        for _ in 1...5 {
-            let randomIndex = Int(arc4random_uniform(UInt32(originalDeck.count)))
-            h.append(originalDeck[randomIndex])
-            originalDeck.remove(at: randomIndex)
-        }
-        //---
-        let card_1 = "\(h[0].0)\(h[0].1).png"
-        let card_2 = "\(h[1].0)\(h[1].1).png"
-        let card_3 = "\(h[2].0)\(h[2].1).png"
-        let card_4 = "\(h[3].0)\(h[3].1).png"
-        let card_5 = "\(h[4].0)\(h[4].1).png"
-        let arrOfCards = [card_1, card_2, card_3, card_4, card_5]
-        //---
-        var counter = 0
-        for slotAnimation in arrOfSlotImageViews {
-            if slotAnimation.layer.borderWidth != 1 {
-                slotAnimation.image = UIImage(named: arrOfCards[counter])
-            }
-            counter = counter + 1
-        }
+        displayCards(arrOfCards: arrOfCards)
         //---
         permissionToSelectCards = true
+        //---
+        prepareForNextHand()
+        //---
+    }
+    //------------------------------------------
+    func prepareForNextHand() {
         //---
         if chances == 0 {
             permissionToSelectCards = false
             dealButton.alpha = 0.5
             resetCards()
+            createDeckOfCards()
+            handToAnalyse = [(0, ""), (0, ""), (0, ""), (0, ""), (0, "")]
+            chances = 2
+            bet = 0
+            betLabel.text = "MISE : 0"
         }
         //---
+    }
+    //------------------------------------------
+    func displayCards(arrOfCards: [String]) {
+        //---
+        var counter = 0
+        for slotAnimation in arrOfSlotImageViews {
+            if slotAnimation.layer.borderWidth != 1 {
+                if chances == 0 {
+                    handToAnalyse = removeEmptySlotsAndReturnArray()
+                    handToAnalyse.append(theHand[counter])
+                }
+                //---
+                slotAnimation.image = UIImage(named: arrOfCards[counter])
+            }
+            counter = counter + 1
+        }
+        //---
+        if chances == 0 {
+            verifyHand(hand: handToAnalyse)
+        }
+        //---
+    }
+    //------------------------------------------
+    func removeEmptySlotsAndReturnArray() -> [(Int, String)] {
+        var arrToReturn = [(Int, String)]()
+        for card in handToAnalyse {
+            if card != (0, "") {
+                arrToReturn.append(card)
+            } }
+        return arrToReturn
+    }
+    //------------------------------------------
+    func createCards(theHand: [(Int, String)]) -> [String] {
+        //---
+        let card_1 = "\(theHand[0].0)\(theHand[0].1).png"
+        let card_2 = "\(theHand[1].0)\(theHand[1].1).png"
+        let card_3 = "\(theHand[2].0)\(theHand[2].1).png"
+        let card_4 = "\(theHand[3].0)\(theHand[3].1).png"
+        let card_5 = "\(theHand[4].0)\(theHand[4].1).png"
+        return [card_1, card_2, card_3, card_4, card_5]
+        //---
+    }
+    //------------------------------------------
+    func returnRandomHand() -> [(Int, String)] {
+        //---
+        var arrToReturn = [(Int, String)]()
+        //---
+        for _ in 1...5 {
+            let randomIndex = Int(arc4random_uniform(UInt32(deckOfCards.count)))
+            arrToReturn.append(deckOfCards[randomIndex])
+            deckOfCards.remove(at: randomIndex)
+        }
+        //---
+        return arrToReturn
+        //---
+    }
+    //------------------------------------------
+    func verifyHand(hand: [(Int, String)]) {
+        if pokerHands.royalFlush(hand: hand) {
+            calculateHand(times: 250, handToDisplay: "QUINTE FLUSH ROYALE")
+        } else if pokerHands.straightFlush(hand: hand) {
+            calculateHand(times: 50, handToDisplay: "QUINTE FLUSH")
+        } else if pokerHands.fourKind(hand: hand) {
+            calculateHand(times: 25, handToDisplay: "CARRÉ")
+        } else if pokerHands.fullHouse(hand: hand) {
+            calculateHand(times: 9, handToDisplay: "FULL")
+        } else if pokerHands.flush(hand: hand) {
+            calculateHand(times: 6, handToDisplay: "COULEUR")
+        } else if pokerHands.straight(hand: hand) {
+            calculateHand(times: 4, handToDisplay: "QUINTE")
+        } else if pokerHands.threeKind(hand: hand) {
+            calculateHand(times: 3, handToDisplay: "BRELAN")
+        } else if pokerHands.twoPairs(hand: hand) {
+            calculateHand(times: 2, handToDisplay: "DEUX PAIRES")
+        } else if pokerHands.onePair(hand: hand) {
+            calculateHand(times: 1, handToDisplay: "PAIRE")
+        } else {
+            calculateHand(times: 0, handToDisplay: "RIEN...")
+        }
+    }
+    //------------------------------------------
+    func calculateHand(times: Int, handToDisplay: String) {
+        credits += (times * bet)
+        tempLabel.text = handToDisplay
+        creditsLabel.text = "CRÉDITS: \(credits)"
     }
     //------------------------------------------
     @IBAction func cardsToHold(_ sender: UIButton) { //<<<<<<<<<<
@@ -214,6 +309,8 @@ class ViewController: UIViewController {
             arrOfBackgrounds[sender.tag].layer.borderWidth = 0.0
             arrOfBackgrounds[sender.tag].layer.backgroundColor = nil
             arrOfKeepLabels[sender.tag].isHidden = true
+            //---
+            manageSelectedCards(theTag: sender.tag, shouldAdd: false)
         } else {
             arrOfSlotImageViews[sender.tag].layer.borderWidth = 1.0
             arrOfBackgrounds[sender.tag].layer.borderWidth = 0.5
@@ -221,12 +318,34 @@ class ViewController: UIViewController {
             arrOfBackgrounds[sender.tag].layer.backgroundColor = UIColor(red: 0.0,
                                                                          green: 0.0, blue: 1.0, alpha: 0.5).cgColor
             arrOfKeepLabels[sender.tag].isHidden = false
+            //---
+            manageSelectedCards(theTag: sender.tag, shouldAdd: true)
+        }
+    }
+    //------------------------------------------
+    func manageSelectedCards(theTag: Int, shouldAdd: Bool) {
+        if shouldAdd {
+            handToAnalyse[theTag] = theHand[theTag]
+        } else {
+            handToAnalyse[theTag] = (0, "")
         }
     }
     //------------------------------------------
     @IBAction func betButtons(_ sender: UIButton) { //<<<<<<<<<<<<<
         //---
         if chances <= 1 {
+            return
+        }
+        //---
+        tempLabel.text = ""
+        //---
+        if sender.tag == 1000 {
+            bet = credits
+            betLabel.text = "MISE : \(bet)"
+            credits = 0
+            creditsLabel.text = "CRÉDITS : \(credits)"
+            dealButton.alpha = 1.0
+            resetBackOfCards()
             return
         }
         //---
@@ -246,7 +365,7 @@ class ViewController: UIViewController {
     //----------------------//----------------------
     func resetBackOfCards() {
         for back in arrOfSlotImageViews {
-            back.image = UIImage(named: "back.png")
+            back.image = UIImage(named: "backCard2.png")
         }
     }
     //----------------------//----------------------

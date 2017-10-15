@@ -17,19 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a15-gM-pgJ">
-                                <rect key="frame" x="584" y="20" width="68" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkgPoker.png" translatesAutoresizingMaskIntoConstraints="NO" id="d83-8G-Qbu" userLabel="Backgound">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a15-gM-pgJ" userLabel="btnDeal">
+                                <rect key="frame" x="582" y="285" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="PLAY">
+                                <state key="normal" image="btnDistribuer.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Oa-3c-Z9b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xee-Ud-GaH" userLabel="btnLeTout">
+                                <rect key="frame" x="351" y="285" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnLeTout.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lRO-SP-1Yy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOq-BT-w52" userLabel="btn25">
+                                <rect key="frame" x="167" y="285" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn25.png"/>
+                                <connections>
+                                    <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q4t-eE-IEw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDi-9j-uUa" userLabel="btnRestart">
+                                <rect key="frame" x="20" y="285" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnRejouer.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfl-ri-gVb" userLabel="View1">
-                                <rect key="frame" x="15" y="151" width="121" height="210"/>
+                                <rect key="frame" x="15" y="55" width="121" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-Gv-O4O">
@@ -39,6 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04K-75-7S3" userLabel="button1">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="cardsToHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKE-wc-3pu"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Garder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZj-xN-4rS" userLabel="keep1">
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
@@ -50,16 +80,19 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPo-zL-IaO" userLabel="View2">
-                                <rect key="frame" x="144" y="151" width="121" height="210"/>
+                                <rect key="frame" x="144" y="55" width="121" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="ed9-aF-3jy">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZZ-wN-pkf" userLabel="button2">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZZ-wN-pkf" userLabel="button2">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="cardsToHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9XU-P5-l94"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Garder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueq-bs-PMx" userLabel="keep2">
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
@@ -71,17 +104,13 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-0p-kcF" userLabel="View3">
-                                <rect key="frame" x="273" y="151" width="121" height="210"/>
+                                <rect key="frame" x="273" y="55" width="121" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-YF-Y88">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xab-5n-IxI" userLabel="button3">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Garder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="044-2l-I3M" userLabel="keep3">
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,19 +118,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xab-5n-IxI" userLabel="button3">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="cardsToHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="edW-Ld-cLg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3Z-Ek-reG" userLabel="View4">
-                                <rect key="frame" x="402" y="151" width="121" height="210"/>
+                                <rect key="frame" x="402" y="55" width="121" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="zfj-Wv-6Lk">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-Fr-HR5" userLabel="button4">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-Fr-HR5" userLabel="button4">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="cardsToHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9KF-Cf-BgN"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Garder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-Ve-i51" userLabel="keep4">
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
@@ -114,16 +153,19 @@
                                 <viewLayoutGuide key="safeArea" id="Zoy-El-gFk"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ds-0l-bYq" userLabel="View5">
-                                <rect key="frame" x="531" y="151" width="121" height="210"/>
+                                <rect key="frame" x="531" y="55" width="121" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="mxQ-1g-oa4">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cm-k3-M79" userLabel="button5">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cm-k3-M79" userLabel="button5">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="cardsToHold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gv5-lc-ND7"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Garder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipf-hy-i3G" userLabel="keep5">
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
@@ -135,16 +177,57 @@
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="bfN-qI-a3w"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crédits: 2000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9q-Lb-Z47">
+                                <rect key="frame" x="229" y="9" width="165" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mise: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57L-5b-J7c">
+                                <rect key="frame" x="482" y="8" width="165" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bonne Chance..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlU-vK-35d">
+                                <rect key="frame" x="-7" y="9" width="165" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb2-To-oo3" userLabel="btn100">
+                                <rect key="frame" x="259" y="285" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn100.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ad-XE-zGT"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0m4-K6-HzZ"/>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I2V-x7-DB5"/>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PH1-Cy-aKH"/>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bUV-bZ-cpa"/>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sII-2A-efU"/>
+                            <constraint firstItem="d83-8G-Qbu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zXM-tY-zhL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="betLabel" destination="57L-5b-J7c" id="voK-pv-RGD"/>
                         <outlet property="bg_1" destination="Sfl-ri-gVb" id="M75-yg-g0s"/>
                         <outlet property="bg_2" destination="OPo-zL-IaO" id="hLx-Rc-by3"/>
                         <outlet property="bg_3" destination="IE1-0p-kcF" id="Rtq-XM-1GA"/>
                         <outlet property="bg_4" destination="l3Z-Ek-reG" id="AuD-7r-qXk"/>
                         <outlet property="bg_5" destination="4ds-0l-bYq" id="OWm-h9-J5X"/>
+                        <outlet property="creditsLabel" destination="B9q-Lb-Z47" id="jjb-JF-7L5"/>
+                        <outlet property="dealButton" destination="a15-gM-pgJ" id="Agt-Tt-p6w"/>
                         <outlet property="keep_1" destination="eZj-xN-4rS" id="Dma-rT-zLS"/>
                         <outlet property="keep_2" destination="ueq-bs-PMx" id="rFh-pG-JSz"/>
                         <outlet property="keep_3" destination="044-2l-I3M" id="blp-DZ-48S"/>
@@ -155,6 +238,7 @@
                         <outlet property="slot_3" destination="F6S-YF-Y88" id="iDj-Yz-Y1q"/>
                         <outlet property="slot_4" destination="zfj-Wv-6Lk" id="SmW-m4-Bcd"/>
                         <outlet property="slot_5" destination="mxQ-1g-oa4" id="hS3-IF-doJ"/>
+                        <outlet property="tempLabel" destination="tlU-vK-35d" id="whY-wZ-TRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,5 +248,11 @@
     </scenes>
     <resources>
         <image name="backCard.png" width="211" height="292"/>
+        <image name="bkgPoker.png" width="4416" height="2484"/>
+        <image name="btn100.png" width="160" height="160"/>
+        <image name="btn25.png" width="160" height="160"/>
+        <image name="btnDistribuer.png" width="160" height="160"/>
+        <image name="btnLeTout.png" width="160" height="160"/>
+        <image name="btnRejouer.png" width="160" height="160"/>
     </resources>
 </document>

@@ -68,6 +68,13 @@
 		B83112D21F8D227A00A1E27B /* blur2.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CD1F8D227A00A1E27B /* blur2.png */; };
 		B83112D31F8D227A00A1E27B /* blur3.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CE1F8D227A00A1E27B /* blur3.png */; };
 		B83112D41F8D227A00A1E27B /* blur4.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CF1F8D227A00A1E27B /* blur4.png */; };
+		B88BD9F71F931A9600A61501 /* bkgPoker.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F01F931A9500A61501 /* bkgPoker.png */; };
+		B88BD9F81F931A9600A61501 /* btnLeTout.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F11F931A9500A61501 /* btnLeTout.png */; };
+		B88BD9F91F931A9600A61501 /* btn25.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F21F931A9600A61501 /* btn25.png */; };
+		B88BD9FA1F931A9600A61501 /* btnDistribuer.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F31F931A9600A61501 /* btnDistribuer.png */; };
+		B88BD9FB1F931A9600A61501 /* btnRejouer.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F41F931A9600A61501 /* btnRejouer.png */; };
+		B88BD9FC1F931A9600A61501 /* btn100.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F51F931A9600A61501 /* btn100.png */; };
+		B88BD9FD1F931A9600A61501 /* backCard.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F61F931A9600A61501 /* backCard.png */; };
 		B8B259121F865F82009CB3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B259111F865F82009CB3A6 /* AppDelegate.swift */; };
 		B8B259141F865F82009CB3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B259131F865F82009CB3A6 /* ViewController.swift */; };
 		B8B259171F865F82009CB3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B259151F865F82009CB3A6 /* Main.storyboard */; };
@@ -101,7 +108,6 @@
 		B8B259841F86633D009CB3A6 /* 10d.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B259501F86633D009CB3A6 /* 10d.png */; };
 		B8B259891F86633D009CB3A6 /* 8d.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B259551F86633D009CB3A6 /* 8d.png */; };
 		B8B2598A1F86633D009CB3A6 /* 9c.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B259561F86633D009CB3A6 /* 9c.png */; };
-		B8B2598D1F867D81009CB3A6 /* backCard.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B2598C1F867D81009CB3A6 /* backCard.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +172,13 @@
 		B83112CD1F8D227A00A1E27B /* blur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur2.png; path = videoPoker/working/blur2.png; sourceTree = SOURCE_ROOT; };
 		B83112CE1F8D227A00A1E27B /* blur3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur3.png; path = videoPoker/working/blur3.png; sourceTree = SOURCE_ROOT; };
 		B83112CF1F8D227A00A1E27B /* blur4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur4.png; path = videoPoker/working/blur4.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F01F931A9500A61501 /* bkgPoker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgPoker.png; path = videoPoker/working/bkgPoker.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F11F931A9500A61501 /* btnLeTout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnLeTout.png; path = videoPoker/working/btnLeTout.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F21F931A9600A61501 /* btn25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn25.png; path = videoPoker/working/btn25.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F31F931A9600A61501 /* btnDistribuer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnDistribuer.png; path = videoPoker/working/btnDistribuer.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F41F931A9600A61501 /* btnRejouer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRejouer.png; path = videoPoker/working/btnRejouer.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F51F931A9600A61501 /* btn100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn100.png; path = videoPoker/working/btn100.png; sourceTree = SOURCE_ROOT; };
+		B88BD9F61F931A9600A61501 /* backCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backCard.png; path = videoPoker/working/backCard.png; sourceTree = SOURCE_ROOT; };
 		B8B2590E1F865F82009CB3A6 /* videoPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = videoPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B259111F865F82009CB3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B259131F865F82009CB3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +214,6 @@
 		B8B259501F86633D009CB3A6 /* 10d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10d.png; path = videoPoker/working/10d.png; sourceTree = SOURCE_ROOT; };
 		B8B259551F86633D009CB3A6 /* 8d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8d.png; path = videoPoker/working/8d.png; sourceTree = SOURCE_ROOT; };
 		B8B259561F86633D009CB3A6 /* 9c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9c.png; path = videoPoker/working/9c.png; sourceTree = SOURCE_ROOT; };
-		B8B2598C1F867D81009CB3A6 /* backCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backCard.png; path = videoPoker/working/backCard.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +261,13 @@
 		B8B259231F8662C0009CB3A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B88BD9F61F931A9600A61501 /* backCard.png */,
+				B88BD9F01F931A9500A61501 /* bkgPoker.png */,
+				B88BD9F21F931A9600A61501 /* btn25.png */,
+				B88BD9F51F931A9600A61501 /* btn100.png */,
+				B88BD9F31F931A9600A61501 /* btnDistribuer.png */,
+				B88BD9F11F931A9500A61501 /* btnLeTout.png */,
+				B88BD9F41F931A9600A61501 /* btnRejouer.png */,
 				B8166DFE1F8E6FBB00589206 /* 1c.png */,
 				B8166DF31F8E6FBA00589206 /* 1d.png */,
 				B8166DF21F8E6FBA00589206 /* 1h.png */,
@@ -309,7 +328,6 @@
 				B83112CE1F8D227A00A1E27B /* blur3.png */,
 				B83112CF1F8D227A00A1E27B /* blur4.png */,
 				B83112CB1F8D227900A1E27B /* blur5.png */,
-				B8B2598C1F867D81009CB3A6 /* backCard.png */,
 				B8B2593B1F86633A009CB3A6 /* 4c.png */,
 				B8B2594E1F86633C009CB3A6 /* 4d.png */,
 				B8B259271F866339009CB3A6 /* 4h.png */,
@@ -405,7 +423,7 @@
 				B8B2597B1F86633D009CB3A6 /* 9s.png in Resources */,
 				B8166DEA1F8E66C100589206 /* Icon-196.png in Resources */,
 				B8166DD81F8E66C100589206 /* Icon-256.png in Resources */,
-				B8B2598D1F867D81009CB3A6 /* backCard.png in Resources */,
+				B88BD9FC1F931A9600A61501 /* btn100.png in Resources */,
 				B8B259761F86633D009CB3A6 /* 6c.png in Resources */,
 				B8B259611F86633D009CB3A6 /* 7h.png in Resources */,
 				B8B2595A1F86633D009CB3A6 /* 8c.png in Resources */,
@@ -423,6 +441,7 @@
 				B8166E0A1F8E6FBD00589206 /* 1h.png in Resources */,
 				B8B259821F86633D009CB3A6 /* 4d.png in Resources */,
 				B8166E101F8E6FBD00589206 /* 13s.png in Resources */,
+				B88BD9F91F931A9600A61501 /* btn25.png in Resources */,
 				B8166E171F8E6FBD00589206 /* 2c.png in Resources */,
 				B8166E151F8E6FBD00589206 /* 3h.png in Resources */,
 				B8166DD91F8E66C100589206 /* Icon-128.png in Resources */,
@@ -434,6 +453,7 @@
 				B8B259751F86633D009CB3A6 /* 5h.png in Resources */,
 				B8B259771F86633D009CB3A6 /* 7c.png in Resources */,
 				B8B2596B1F86633D009CB3A6 /* 6h.png in Resources */,
+				B88BD9FB1F931A9600A61501 /* btnRejouer.png in Resources */,
 				B8166E181F8E6FBD00589206 /* 1s.png in Resources */,
 				B8166E1D1F8E6FBD00589206 /* 3d.png in Resources */,
 				B8166E1A1F8E6FBD00589206 /* 12h.png in Resources */,
@@ -446,6 +466,7 @@
 				B8166E211F8E6FBD00589206 /* 2s.png in Resources */,
 				B83112D21F8D227A00A1E27B /* blur2.png in Resources */,
 				B8166E121F8E6FBD00589206 /* 2d.png in Resources */,
+				B88BD9F71F931A9600A61501 /* bkgPoker.png in Resources */,
 				B8166E201F8E6FBD00589206 /* 11h.png in Resources */,
 				B8B2595C1F86633D009CB3A6 /* 7s.png in Resources */,
 				B8B2596A1F86633D009CB3A6 /* 5s.png in Resources */,
@@ -456,6 +477,7 @@
 				B8166DE31F8E66C100589206 /* Icon-48.png in Resources */,
 				B8166E0C1F8E6FBD00589206 /* 12s.png in Resources */,
 				B8166DDD1F8E66C100589206 /* Icon-58.png in Resources */,
+				B88BD9FD1F931A9600A61501 /* backCard.png in Resources */,
 				B8166E131F8E6FBD00589206 /* 12c.png in Resources */,
 				B8166DE51F8E66C100589206 /* Icon-64.png in Resources */,
 				B8166DDB1F8E66C100589206 /* Icon-60.png in Resources */,
@@ -485,11 +507,13 @@
 				B8B259621F86633D009CB3A6 /* 8s.png in Resources */,
 				B8166DE21F8E66C100589206 /* Icon-114.png in Resources */,
 				B83112D41F8D227A00A1E27B /* blur4.png in Resources */,
+				B88BD9FA1F931A9600A61501 /* btnDistribuer.png in Resources */,
 				B8B259171F865F82009CB3A6 /* Main.storyboard in Resources */,
 				B83112D31F8D227A00A1E27B /* blur3.png in Resources */,
 				B8B2595B1F86633D009CB3A6 /* 4h.png in Resources */,
 				B8166DE01F8E66C100589206 /* Icon-80.png in Resources */,
 				B8166DE71F8E66C100589206 /* Icon-72.png in Resources */,
+				B88BD9F81F931A9600A61501 /* btnLeTout.png in Resources */,
 				B8166DE41F8E66C100589206 /* Icon-144.png in Resources */,
 				B8B259581F86633D009CB3A6 /* 10h.png in Resources */,
 				B8166DB31F8E599100589206 /* LaunchingScreenPokerV2.png in Resources */,
