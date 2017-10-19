@@ -63,11 +63,17 @@
 		B8166E1F1F8E6FBD00589206 /* 11s.png in Resources */ = {isa = PBXBuildFile; fileRef = B8166E071F8E6FBD00589206 /* 11s.png */; };
 		B8166E201F8E6FBD00589206 /* 11h.png in Resources */ = {isa = PBXBuildFile; fileRef = B8166E081F8E6FBD00589206 /* 11h.png */; };
 		B8166E211F8E6FBD00589206 /* 2s.png in Resources */ = {isa = PBXBuildFile; fileRef = B8166E091F8E6FBD00589206 /* 2s.png */; };
+		B82013D01F97A4E200864E30 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82013CF1F97A4E200864E30 /* UserDefaultsManager.swift */; };
 		B83112D01F8D227A00A1E27B /* blur5.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CB1F8D227900A1E27B /* blur5.png */; };
 		B83112D11F8D227A00A1E27B /* blur1.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CC1F8D227A00A1E27B /* blur1.png */; };
 		B83112D21F8D227A00A1E27B /* blur2.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CD1F8D227A00A1E27B /* blur2.png */; };
 		B83112D31F8D227A00A1E27B /* blur3.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CE1F8D227A00A1E27B /* blur3.png */; };
 		B83112D41F8D227A00A1E27B /* blur4.png in Resources */ = {isa = PBXBuildFile; fileRef = B83112CF1F8D227A00A1E27B /* blur4.png */; };
+		B84051571F95B3C500C02CBA /* betChip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051541F95B3C500C02CBA /* betChip.mp3 */; };
+		B84051581F95B3C500C02CBA /* dealButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051551F95B3C500C02CBA /* dealButton.mp3 */; };
+		B84051591F95B3C500C02CBA /* pandeiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051561F95B3C500C02CBA /* pandeiro.mp3 */; };
+		B8514D651F98239100A2BD66 /* bkgPokerInv.png in Resources */ = {isa = PBXBuildFile; fileRef = B8514D641F98239000A2BD66 /* bkgPokerInv.png */; };
+		B8514D671F98305B00A2BD66 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8514D661F98305B00A2BD66 /* click.mp3 */; };
 		B88BD9F71F931A9600A61501 /* bkgPoker.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F01F931A9500A61501 /* bkgPoker.png */; };
 		B88BD9F81F931A9600A61501 /* btnLeTout.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F11F931A9500A61501 /* btnLeTout.png */; };
 		B88BD9F91F931A9600A61501 /* btn25.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F21F931A9600A61501 /* btn25.png */; };
@@ -167,11 +173,17 @@
 		B8166E071F8E6FBD00589206 /* 11s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11s.png; path = videoPoker/working/11s.png; sourceTree = SOURCE_ROOT; };
 		B8166E081F8E6FBD00589206 /* 11h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11h.png; path = videoPoker/working/11h.png; sourceTree = SOURCE_ROOT; };
 		B8166E091F8E6FBD00589206 /* 2s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2s.png; path = videoPoker/working/2s.png; sourceTree = SOURCE_ROOT; };
+		B82013CF1F97A4E200864E30 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B83112CB1F8D227900A1E27B /* blur5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur5.png; path = videoPoker/working/blur5.png; sourceTree = SOURCE_ROOT; };
 		B83112CC1F8D227A00A1E27B /* blur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur1.png; path = videoPoker/working/blur1.png; sourceTree = SOURCE_ROOT; };
 		B83112CD1F8D227A00A1E27B /* blur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur2.png; path = videoPoker/working/blur2.png; sourceTree = SOURCE_ROOT; };
 		B83112CE1F8D227A00A1E27B /* blur3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur3.png; path = videoPoker/working/blur3.png; sourceTree = SOURCE_ROOT; };
 		B83112CF1F8D227A00A1E27B /* blur4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur4.png; path = videoPoker/working/blur4.png; sourceTree = SOURCE_ROOT; };
+		B84051541F95B3C500C02CBA /* betChip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = betChip.mp3; path = videoPoker/working/betChip.mp3; sourceTree = SOURCE_ROOT; };
+		B84051551F95B3C500C02CBA /* dealButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dealButton.mp3; path = videoPoker/working/dealButton.mp3; sourceTree = SOURCE_ROOT; };
+		B84051561F95B3C500C02CBA /* pandeiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pandeiro.mp3; path = videoPoker/working/pandeiro.mp3; sourceTree = SOURCE_ROOT; };
+		B8514D641F98239000A2BD66 /* bkgPokerInv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgPokerInv.png; path = videoPoker/working/bkgPokerInv.png; sourceTree = SOURCE_ROOT; };
+		B8514D661F98305B00A2BD66 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = click.mp3; path = videoPoker/working/click.mp3; sourceTree = SOURCE_ROOT; };
 		B88BD9F01F931A9500A61501 /* bkgPoker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgPoker.png; path = videoPoker/working/bkgPoker.png; sourceTree = SOURCE_ROOT; };
 		B88BD9F11F931A9500A61501 /* btnLeTout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnLeTout.png; path = videoPoker/working/btnLeTout.png; sourceTree = SOURCE_ROOT; };
 		B88BD9F21F931A9600A61501 /* btn25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn25.png; path = videoPoker/working/btn25.png; sourceTree = SOURCE_ROOT; };
@@ -227,6 +239,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B84051531F95B3A000C02CBA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B8514D661F98305B00A2BD66 /* click.mp3 */,
+				B84051541F95B3C500C02CBA /* betChip.mp3 */,
+				B84051551F95B3C500C02CBA /* dealButton.mp3 */,
+				B84051561F95B3C500C02CBA /* pandeiro.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		B8B259051F865F82009CB3A6 = {
 			isa = PBXGroup;
 			children = (
@@ -246,8 +269,10 @@
 		B8B259101F865F82009CB3A6 /* videoPoker */ = {
 			isa = PBXGroup;
 			children = (
-				B8166DB41F8E599F00589206 /* PokerHands.swift */,
+				B84051531F95B3A000C02CBA /* Sounds */,
 				B8B259231F8662C0009CB3A6 /* images */,
+				B82013CF1F97A4E200864E30 /* UserDefaultsManager.swift */,
+				B8166DB41F8E599F00589206 /* PokerHands.swift */,
 				B8B259111F865F82009CB3A6 /* AppDelegate.swift */,
 				B8B259131F865F82009CB3A6 /* ViewController.swift */,
 				B8B259151F865F82009CB3A6 /* Main.storyboard */,
@@ -261,6 +286,7 @@
 		B8B259231F8662C0009CB3A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B8514D641F98239000A2BD66 /* bkgPokerInv.png */,
 				B88BD9F61F931A9600A61501 /* backCard.png */,
 				B88BD9F01F931A9500A61501 /* bkgPoker.png */,
 				B88BD9F21F931A9600A61501 /* btn25.png */,
@@ -449,6 +475,8 @@
 				B8166DEE1F8E66C100589206 /* Icon-180.png in Resources */,
 				B8166E1F1F8E6FBD00589206 /* 11s.png in Resources */,
 				B8B259841F86633D009CB3A6 /* 10d.png in Resources */,
+				B8514D651F98239100A2BD66 /* bkgPokerInv.png in Resources */,
+				B84051571F95B3C500C02CBA /* betChip.mp3 in Resources */,
 				B8166E0B1F8E6FBD00589206 /* 1d.png in Resources */,
 				B8B259751F86633D009CB3A6 /* 5h.png in Resources */,
 				B8B259771F86633D009CB3A6 /* 7c.png in Resources */,
@@ -470,6 +498,7 @@
 				B8166E201F8E6FBD00589206 /* 11h.png in Resources */,
 				B8B2595C1F86633D009CB3A6 /* 7s.png in Resources */,
 				B8B2596A1F86633D009CB3A6 /* 5s.png in Resources */,
+				B84051591F95B3C500C02CBA /* pandeiro.mp3 in Resources */,
 				B83112D01F8D227A00A1E27B /* blur5.png in Resources */,
 				B8166E1B1F8E6FBD00589206 /* 13c.png in Resources */,
 				B8166DD51F8E66C100589206 /* Icon-87.png in Resources */,
@@ -480,8 +509,10 @@
 				B88BD9FD1F931A9600A61501 /* backCard.png in Resources */,
 				B8166E131F8E6FBD00589206 /* 12c.png in Resources */,
 				B8166DE51F8E66C100589206 /* Icon-64.png in Resources */,
+				B84051581F95B3C500C02CBA /* dealButton.mp3 in Resources */,
 				B8166DDB1F8E66C100589206 /* Icon-60.png in Resources */,
 				B8166DED1F8E66C100589206 /* Icon-167.png in Resources */,
+				B8514D671F98305B00A2BD66 /* click.mp3 in Resources */,
 				B8B259191F865F82009CB3A6 /* Assets.xcassets in Resources */,
 				B8166E0D1F8E6FBD00589206 /* 2h.png in Resources */,
 				B8166E0F1F8E6FBD00589206 /* 11c.png in Resources */,
@@ -529,6 +560,7 @@
 			files = (
 				B8B259141F865F82009CB3A6 /* ViewController.swift in Sources */,
 				B8166DB51F8E599F00589206 /* PokerHands.swift in Sources */,
+				B82013D01F97A4E200864E30 /* UserDefaultsManager.swift in Sources */,
 				B8B259121F865F82009CB3A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

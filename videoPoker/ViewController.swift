@@ -1,5 +1,6 @@
 //----------------------//----------------------
 import UIKit
+import AVFoundation
 //----------------------//----------------------
 class ViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
@@ -22,6 +23,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var bg_4: UIView!
     @IBOutlet weak var bg_5: UIView!
     //---
+    var bkgPoker_1: UIImage!
+    var bkgPoker_2: UIImage!
+    //---
+    @IBOutlet weak var bkgPoker: UIImageView!
+    //---
     @IBOutlet weak var keep_1: UILabel! //<<<<<<<<<<
     @IBOutlet weak var keep_2: UILabel!
     @IBOutlet weak var keep_3: UILabel!
@@ -32,9 +38,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var betLabel: UILabel!
     //---
+    @IBOutlet weak var betButtonTout: UIButton!
+    @IBOutlet weak var betButton100: UIButton!
+    @IBOutlet weak var betButton25: UIButton!
+    //---
+    @IBOutlet weak var restartButton: UIButton!
+    //---
     var arrOfCardImages: [UIImage]!
     //---
     var arrOfSlotImageViews: [UIImageView]!
+    //---
+    var arrOfBkgPoker: [UIImage]!
     //---
     var deckOfCards = [(Int, String)]() //Pour tous les cartes
     //---
@@ -44,7 +58,7 @@ class ViewController: UIViewController {
     //---
     var permissionToSelectCards = false //<<<<<<<<<<<<<
     var bet = 0 //<<<<<<<<<<<<<
-    var credits = 2000 //<<<<<<<<<<<<<
+    var credits = 0 //<<<<<<<<<<<<<
     //---
     var chances = 2
     //---
@@ -53,21 +67,30 @@ class ViewController: UIViewController {
     var handToAnalyse = [(0, ""), (0, ""), (0, ""), (0, ""), (0, "")]
     //---
     var theHand = [(Int, String)]()
+    //---
+    var soundBlur: AVAudioPlayer?
+    var soundDealButton: AVAudioPlayer?
+    var soundBetButton: AVAudioPlayer?
+    var soundClickButton: AVAudioPlayer?
+    //---
+    let userDef = UserDefaultsManager()
     //------------------------------------------
     override func viewDidLoad() {
         //---
         super.viewDidLoad()
         //---
+        soundPoker()
+        //---
         createCardObjectsFromImages()
         //---
         fillUpArrays()
         //---
-        prepareAnimations(duration: 0.2,
+        prepareAnimations(duration: 0.5,
                           repeating: 5,
                           cards: arrOfCardImages)
         //---
         stylizeSlotImageViews(radius: 10,
-                              borderWidth: 1,
+                              borderWidth: 0.5,
                               borderColor: UIColor.black.cgColor,
                               bgColor: UIColor.yellow.cgColor)
         
@@ -79,6 +102,28 @@ class ViewController: UIViewController {
         //---
         createDeckOfCards() //<<<<<<<<<<
         //---
+        manageCredit()
+        //---
+    }
+    //------------------------------------------
+    func soundPoker(){
+        guard let urlSoundBlur = Bundle.main.url(forResource: "pandeiro", withExtension: "mp3") else { return }
+        guard let urlSoundDealButton = Bundle.main.url(forResource: "dealButton", withExtension: "mp3") else { return }
+        guard let urlSoundBetButton = Bundle.main.url(forResource: "betChip", withExtension: "mp3") else { return }
+        guard let urlSoundClickButton = Bundle.main.url(forResource: "click", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            soundBlur = try AVAudioPlayer(contentsOf: urlSoundBlur)
+            soundDealButton = try AVAudioPlayer(contentsOf: urlSoundDealButton)
+            soundBetButton = try AVAudioPlayer(contentsOf: urlSoundBetButton)
+            soundClickButton = try AVAudioPlayer(contentsOf: urlSoundClickButton)
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     //------------------------------------------
     func createDeckOfCards() { //<<<<<<<<<<
@@ -138,7 +183,9 @@ class ViewController: UIViewController {
             slotAnimation.animationDuration = d
             slotAnimation.animationRepeatCount = r
             slotAnimation.animationImages = returnRandomBlurCards(arrBlurCards: c)
-        } }
+        }
+        //---
+    }
     //------------------------------------------
     func returnRandomBlurCards(arrBlurCards: [UIImage]) -> [UIImage] {
         var arrToReturn = [UIImage]()
@@ -157,6 +204,15 @@ class ViewController: UIViewController {
             return
         } else {
             chances = chances - 1
+            if chances == 1 {
+                betButtonTout.alpha = 0.5
+                betButton100.alpha = 0.5
+                betButton25.alpha = 0.5
+            } else {
+                betButtonTout.alpha = 1
+                betButton100.alpha = 1
+                betButton25.alpha = 1
+            }
         }
         //---
         var allSelected = true
@@ -182,6 +238,9 @@ class ViewController: UIViewController {
                              selector: #selector(displayRandomCards),
                              userInfo: nil,
                              repeats: false) //<<<<<<<<<<
+        //---
+        soundBlur?.play()
+        //---
     }
     //------------------------------------------
     @objc func displayRandomCards() { //<<<<<<<<<<
@@ -288,14 +347,26 @@ class ViewController: UIViewController {
         } else if pokerHands.onePair(hand: hand) {
             calculateHand(times: 1, handToDisplay: "PAIRE")
         } else {
-            calculateHand(times: 0, handToDisplay: "RIEN...")
+            calculateHand(times: 0, handToDisplay: "BONNE CHANCE...")
         }
     }
     //------------------------------------------
     func calculateHand(times: Int, handToDisplay: String) {
         credits += (times * bet)
         tempLabel.text = handToDisplay
-        creditsLabel.text = "CRÉDITS: \(credits)"
+        creditsLabel.text = "CRÉDITS : \(credits)"
+        verifyIfThereIsCredit()
+        userDef.setKey(theValue: credits as AnyObject, theKey: "credits")
+    }
+    //------------------------------------------
+    func verifyIfThereIsCredit(){
+        if creditsLabel.text == "CRÉDITS : 0" {
+            betButton25.alpha = 0.5
+            betButton100.alpha = 0.5
+            betButtonTout.alpha = 0.5
+            dealButton.alpha = 0.5
+            restartButton.alpha = 1
+        }
     }
     //------------------------------------------
     @IBAction func cardsToHold(_ sender: UIButton) { //<<<<<<<<<<
@@ -321,6 +392,7 @@ class ViewController: UIViewController {
             //---
             manageSelectedCards(theTag: sender.tag, shouldAdd: true)
         }
+        soundClickButton?.play()
     }
     //------------------------------------------
     func manageSelectedCards(theTag: Int, shouldAdd: Bool) {
@@ -333,14 +405,18 @@ class ViewController: UIViewController {
     //------------------------------------------
     @IBAction func betButtons(_ sender: UIButton) { //<<<<<<<<<<<<<
         //---
-        if chances <= 1 {
+        if betButtonTout.alpha == 1 && betButton100.alpha == 1 && betButton25.alpha == 1 {
+        soundBetButton?.play()
+        }
+        //---
+        if chances <= 1 || credits == 0 {
             return
         }
         //---
         tempLabel.text = ""
         //---
         if sender.tag == 1000 {
-            bet = credits
+            bet += credits
             betLabel.text = "MISE : \(bet)"
             credits = 0
             creditsLabel.text = "CRÉDITS : \(credits)"
@@ -355,7 +431,7 @@ class ViewController: UIViewController {
             bet += theBet
             credits -= theBet
             betLabel.text = "MISE : \(bet)"
-            creditsLabel.text = "CRÉDIT : \(credits)"
+            creditsLabel.text = "CRÉDITS : \(credits)"
             dealButton.alpha = 1.0
         }
         //---
@@ -365,7 +441,7 @@ class ViewController: UIViewController {
     //----------------------//----------------------
     func resetBackOfCards() {
         for back in arrOfSlotImageViews {
-            back.image = UIImage(named: "backCard2.png")
+            back.image = UIImage(named: "backCard.png")
         }
     }
     //----------------------//----------------------
@@ -380,6 +456,39 @@ class ViewController: UIViewController {
         //---
         chances = 2
         //---
+    }
+    //------------------------------------------
+    @IBAction func restart(_ sender: UIButton) {
+        if restartButton.alpha == 0.5 {
+            return
+        }
+        //---
+        if restartButton.alpha == 1 {
+            //---
+            prepareForNextHand()
+            //---
+            resetBackOfCards()
+            //---
+            credits = 2000
+            creditsLabel.text = "CRÉDITS : \(credits)"
+            tempLabel.text = "Bonne chance..."
+            betButtonTout.alpha = 1
+            betButton100.alpha = 1
+            betButton25.alpha = 1
+            restartButton.alpha = 0.5
+            //---
+            soundDealButton?.play()
+        }
+    }
+    //------------------------------------------
+    func manageCredit() {
+    
+        if !userDef.doesKeyExist(theKey: "credits"){
+            userDef.setKey(theValue: 2000 as AnyObject, theKey: "credits")
+        }
+            credits = userDef.getValue(theKey: "credits") as! Int
+            creditsLabel.text = "CRÉDITS : \(credits)"
+            verifyIfThereIsCredit()
     }
     //------------------------------------------
 }

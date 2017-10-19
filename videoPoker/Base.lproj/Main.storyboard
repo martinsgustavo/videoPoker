@@ -20,8 +20,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkgPoker.png" translatesAutoresizingMaskIntoConstraints="NO" id="d83-8G-Qbu" userLabel="Backgound">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a15-gM-pgJ" userLabel="btnDeal">
-                                <rect key="frame" x="582" y="285" width="70" height="70"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a15-gM-pgJ" userLabel="btnDeal">
+                                <rect key="frame" x="562" y="265" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnDistribuer.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xee-Ud-GaH" userLabel="btnLeTout">
-                                <rect key="frame" x="351" y="285" width="70" height="70"/>
+                                <rect key="frame" x="360" y="265" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnLeTout.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,19 +41,32 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOq-BT-w52" userLabel="btn25">
-                                <rect key="frame" x="167" y="285" width="70" height="70"/>
+                                <rect key="frame" x="162" y="265" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn25.png"/>
                                 <connections>
                                     <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q4t-eE-IEw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDi-9j-uUa" userLabel="btnRestart">
-                                <rect key="frame" x="20" y="285" width="70" height="70"/>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb2-To-oo3" userLabel="btn100">
+                                <rect key="frame" x="262" y="265" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn100.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ad-XE-zGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDi-9j-uUa" userLabel="btnRestart">
+                                <rect key="frame" x="15" y="265" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnRejouer.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9P-RS-z6o"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfl-ri-gVb" userLabel="View1">
                                 <rect key="frame" x="15" y="55" width="121" height="210"/>
@@ -74,7 +87,7 @@
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -98,7 +111,7 @@
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -115,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xab-5n-IxI" userLabel="button3">
@@ -146,7 +159,7 @@
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -171,43 +184,33 @@
                                         <rect key="frame" x="0.0" y="170" width="121" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="bfN-qI-a3w"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crédits: 2000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9q-Lb-Z47">
-                                <rect key="frame" x="229" y="9" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crédits: 2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9q-Lb-Z47">
+                                <rect key="frame" x="203" y="9" width="259" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mise: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57L-5b-J7c">
-                                <rect key="frame" x="482" y="8" width="165" height="21"/>
+                                <rect key="frame" x="460" y="8" width="187" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bonne Chance..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlU-vK-35d">
-                                <rect key="frame" x="-7" y="9" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bonne chance..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlU-vK-35d">
+                                <rect key="frame" x="15" y="9" width="190" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb2-To-oo3" userLabel="btn100">
-                                <rect key="frame" x="259" y="285" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn100.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="betButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ad-XE-zGT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="d83-8G-Qbu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0m4-K6-HzZ"/>
@@ -220,12 +223,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="betButton100" destination="qb2-To-oo3" id="pEH-ua-xc1"/>
+                        <outlet property="betButton25" destination="qOq-BT-w52" id="8ns-96-V2X"/>
+                        <outlet property="betButtonTout" destination="xee-Ud-GaH" id="EqE-wP-c0v"/>
                         <outlet property="betLabel" destination="57L-5b-J7c" id="voK-pv-RGD"/>
                         <outlet property="bg_1" destination="Sfl-ri-gVb" id="M75-yg-g0s"/>
                         <outlet property="bg_2" destination="OPo-zL-IaO" id="hLx-Rc-by3"/>
                         <outlet property="bg_3" destination="IE1-0p-kcF" id="Rtq-XM-1GA"/>
                         <outlet property="bg_4" destination="l3Z-Ek-reG" id="AuD-7r-qXk"/>
                         <outlet property="bg_5" destination="4ds-0l-bYq" id="OWm-h9-J5X"/>
+                        <outlet property="bkgPoker" destination="d83-8G-Qbu" id="1Wp-1F-C0n"/>
                         <outlet property="creditsLabel" destination="B9q-Lb-Z47" id="jjb-JF-7L5"/>
                         <outlet property="dealButton" destination="a15-gM-pgJ" id="Agt-Tt-p6w"/>
                         <outlet property="keep_1" destination="eZj-xN-4rS" id="Dma-rT-zLS"/>
@@ -233,6 +240,7 @@
                         <outlet property="keep_3" destination="044-2l-I3M" id="blp-DZ-48S"/>
                         <outlet property="keep_4" destination="fPA-Ve-i51" id="eo1-7V-WgW"/>
                         <outlet property="keep_5" destination="ipf-hy-i3G" id="mab-NE-iNT"/>
+                        <outlet property="restartButton" destination="UDi-9j-uUa" id="KJb-Nz-KXZ"/>
                         <outlet property="slot_1" destination="hCW-Gv-O4O" id="IIO-gC-FxQ"/>
                         <outlet property="slot_2" destination="ed9-aF-3jy" id="45k-zt-DKA"/>
                         <outlet property="slot_3" destination="F6S-YF-Y88" id="iDj-Yz-Y1q"/>
