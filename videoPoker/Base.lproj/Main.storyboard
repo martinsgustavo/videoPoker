@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xee-Ud-GaH" userLabel="btnLeTout">
-                                <rect key="frame" x="359" y="265" width="90" height="90"/>
+                                <rect key="frame" x="361" y="265" width="89" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnLeTout.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

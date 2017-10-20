@@ -3,82 +3,76 @@ import UIKit
 import AVFoundation
 //----------------------//----------------------
 class ViewController: UIViewController {
-    @IBOutlet weak var tempLabel: UILabel!
-    //---
+
+    // Créé pour montrer des cartes et des animations
     @IBOutlet weak var slot_1: UIImageView!
     @IBOutlet weak var slot_2: UIImageView!
     @IBOutlet weak var slot_3: UIImageView!
     @IBOutlet weak var slot_4: UIImageView!
     @IBOutlet weak var slot_5: UIImageView!
-    //---
+    // Variables pour les animations des cartes
     var card_blur_1: UIImage!
     var card_blur_2: UIImage!
     var card_blur_3: UIImage!
     var card_blur_4: UIImage!
     var card_blur_5: UIImage!
-    //---
-    @IBOutlet weak var bg_1: UIView! //<<<<<<<<
+    // Créé pour générer un tableau des Backgrounds des cartes
+    @IBOutlet weak var bg_1: UIView!
     @IBOutlet weak var bg_2: UIView!
     @IBOutlet weak var bg_3: UIView!
     @IBOutlet weak var bg_4: UIView!
     @IBOutlet weak var bg_5: UIView!
-    //---
-    var bkgPoker_1: UIImage!
-    var bkgPoker_2: UIImage!
-    //---
-    @IBOutlet weak var bkgPoker: UIImageView!
-    //---
-    @IBOutlet weak var keep_1: UILabel! //<<<<<<<<<<
+    // Créé afin que vous puissiez conserver les cartes choisies
+    @IBOutlet weak var keep_1: UILabel!
     @IBOutlet weak var keep_2: UILabel!
     @IBOutlet weak var keep_3: UILabel!
     @IBOutlet weak var keep_4: UILabel!
     @IBOutlet weak var keep_5: UILabel!
-    //---
-    @IBOutlet weak var dealButton: UIButton! //<<<<<<<<<<<<<
+    // Des labels créées pour montrer le résultat du jeu, le montant du crédit et votre mise
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var betLabel: UILabel!
-    //---
+    // Bouton pour démarrer le jeu
+    @IBOutlet weak var dealButton: UIButton!
+    // Bouton pour parier
     @IBOutlet weak var betButtonTout: UIButton!
     @IBOutlet weak var betButton100: UIButton!
     @IBOutlet weak var betButton25: UIButton!
-    //---
+    // Bouton pour redémarrer
     @IBOutlet weak var restartButton: UIButton!
-    //---
+    // Tableau pour les flous
     var arrOfCardImages: [UIImage]!
-    //---
+    // Tableau pour montrer les cartes au hasard
     var arrOfSlotImageViews: [UIImageView]!
-    //---
-    var arrOfBkgPoker: [UIImage]!
-    //---
+    // Pour créé tous les cartes du jeu
     var deckOfCards = [(Int, String)]() //Pour tous les cartes
+    // Tableau pour les Backgrounds des cartes
+    var arrOfBackgrounds: [UIView]!
+    // Tableau pour voir les cartes sauvé
+    var arrOfKeepLabels: [UILabel]!
+    // ---
+    var permissionToSelectCards = false // Variable créé pour faire la permission de sélectionner les cartes
+    var bet = 0 // Variable pour garder le mise
+    var credits = 0 // Variable pour garder les crédits
     //---
-    var arrOfBackgrounds: [UIView]! //Tableau pour Bkg
+    var chances = 2 // Variable pour la quantité des fois qui on peut jouer pour mise
     //---
-    var arrOfKeepLabels: [UILabel]! //Tableau pour keep (Label)
+    let pokerHands = PokerHands() // Règles de Vidéo Poker
     //---
-    var permissionToSelectCards = false //<<<<<<<<<<<<<
-    var bet = 0 //<<<<<<<<<<<<<
-    var credits = 0 //<<<<<<<<<<<<<
-    //---
-    var chances = 2
-    //---
-    let pokerHands = PokerHands()
-    //---
-    var handToAnalyse = [(0, ""), (0, ""), (0, ""), (0, ""), (0, "")]
+    var handToAnalyse = [(0, ""), (0, ""), (0, ""), (0, ""), (0, "")] // Variable pour vérifier la combinaison des cartes.
     //---
     var theHand = [(Int, String)]()
-    //---
+    // Variables pous les sons du jeu
     var soundBlur: AVAudioPlayer?
     var soundDealButton: AVAudioPlayer?
     var soundBetButton: AVAudioPlayer?
     var soundClickButton: AVAudioPlayer?
     //---
-    let userDef = UserDefaultsManager()
+    let userDef = UserDefaultsManager() // Sauvegarder les crédits même quand l'app est fermée
     //------------------------------------------
     override func viewDidLoad() {
-        //---
         super.viewDidLoad()
-        //---
+        // Initialiser toutes les fonctions ci-dessous pour préparer le jeu.
         soundPoker()
         //---
         createCardObjectsFromImages()
@@ -98,14 +92,14 @@ class ViewController: UIViewController {
         stylizeBackgroundViews(radius: 10,
                                borderWidth: nil,
                                borderColor: UIColor.black.cgColor,
-                               bgColor: nil) //<<<<<<<<<<
+                               bgColor: nil)
         //---
-        createDeckOfCards() //<<<<<<<<<<
+        createDeckOfCards()
         //---
         manageCredit()
-        //---
     }
     //------------------------------------------
+    // Les effets sonores du jeu
     func soundPoker(){
         guard let urlSoundBlur = Bundle.main.url(forResource: "pandeiro", withExtension: "mp3") else { return }
         guard let urlSoundDealButton = Bundle.main.url(forResource: "dealButton", withExtension: "mp3") else { return }
@@ -126,7 +120,8 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
-    func createDeckOfCards() { //<<<<<<<<<<
+    // Pour incluire dans le tableau les cartes
+    func createDeckOfCards() {
         for a in 0...3 {
             let suits = ["d", "h", "c", "s"]
             for b in 1...13 {
@@ -135,6 +130,7 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
+    // Pour faire un style pour les cartes
     func stylizeSlotImageViews(radius r: CGFloat,
                                borderWidth w: CGFloat,
                                borderColor c: CGColor,
@@ -148,6 +144,7 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
+    // Fonction pour faire un style dedans les backgrounds
     func stylizeBackgroundViews(radius r: CGFloat,
                                 borderWidth w: CGFloat?,
                                 borderColor c: CGColor,
@@ -161,6 +158,7 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
+    // Pour initialiser tous les tableaux
     func fillUpArrays() {
         arrOfCardImages = [card_blur_1, card_blur_2, card_blur_3, card_blur_4, card_blur_5]
         arrOfSlotImageViews = [slot_1, slot_2, slot_3, slot_4, slot_5]
@@ -168,6 +166,7 @@ class ViewController: UIViewController {
         arrOfKeepLabels = [keep_1, keep_2, keep_3, keep_4, keep_5]
     }
     //------------------------------------------
+    // Fonction pour faire la liaison entre les variables et les images
     func createCardObjectsFromImages() {
         card_blur_1 = UIImage(named: "blur1.png")
         card_blur_2 = UIImage(named: "blur2.png")
@@ -176,6 +175,7 @@ class ViewController: UIViewController {
         card_blur_5 = UIImage(named: "blur5.png")
     }
     //------------------------------------------
+    // Fonction pour les animations et ses temps
     func prepareAnimations(duration d: Double,
                            repeating r: Int,
                            cards c: [UIImage]) {
@@ -187,6 +187,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Fonction pour retourner les flous aléatoires
     func returnRandomBlurCards(arrBlurCards: [UIImage]) -> [UIImage] {
         var arrToReturn = [UIImage]()
         var arrOriginal = arrBlurCards
@@ -198,6 +199,7 @@ class ViewController: UIViewController {
         return arrToReturn
     }
     //------------------------------------------
+    // Action pour démarrer le jeu
     @IBAction func play(_ sender: UIButton) {
         //---
         if chances == 0 || dealButton.alpha == 0.5 {
@@ -233,7 +235,7 @@ class ViewController: UIViewController {
                 slotAnimation.startAnimating()
             }
         }
-        Timer.scheduledTimer(timeInterval: 2.55,
+        Timer.scheduledTimer(timeInterval: 2.6,
                              target: self,
                              selector: #selector(displayRandomCards),
                              userInfo: nil,
@@ -243,7 +245,8 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
-    @objc func displayRandomCards() { //<<<<<<<<<<
+    // Pour sélectionner au hasard les cartes
+    @objc func displayRandomCards() {
         //---
         theHand = returnRandomHand()
         //---
@@ -257,6 +260,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Function pour redémarrer le prochain main
     func prepareForNextHand() {
         //---
         if chances == 0 {
@@ -272,6 +276,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Pour montrer tous les cartes qui n'ont pas été sauvegardées
     func displayCards(arrOfCards: [String]) {
         //---
         var counter = 0
@@ -293,6 +298,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Fonction pour nettoyer le tableau "arrToReturn"
     func removeEmptySlotsAndReturnArray() -> [(Int, String)] {
         var arrToReturn = [(Int, String)]()
         for card in handToAnalyse {

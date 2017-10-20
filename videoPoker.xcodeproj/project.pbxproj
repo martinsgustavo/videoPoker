@@ -72,7 +72,6 @@
 		B84051571F95B3C500C02CBA /* betChip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051541F95B3C500C02CBA /* betChip.mp3 */; };
 		B84051581F95B3C500C02CBA /* dealButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051551F95B3C500C02CBA /* dealButton.mp3 */; };
 		B84051591F95B3C500C02CBA /* pandeiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B84051561F95B3C500C02CBA /* pandeiro.mp3 */; };
-		B8514D651F98239100A2BD66 /* bkgPokerInv.png in Resources */ = {isa = PBXBuildFile; fileRef = B8514D641F98239000A2BD66 /* bkgPokerInv.png */; };
 		B8514D671F98305B00A2BD66 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8514D661F98305B00A2BD66 /* click.mp3 */; };
 		B88BD9F71F931A9600A61501 /* bkgPoker.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F01F931A9500A61501 /* bkgPoker.png */; };
 		B88BD9F81F931A9600A61501 /* btnLeTout.png in Resources */ = {isa = PBXBuildFile; fileRef = B88BD9F11F931A9500A61501 /* btnLeTout.png */; };
@@ -182,7 +181,6 @@
 		B84051541F95B3C500C02CBA /* betChip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = betChip.mp3; path = videoPoker/working/betChip.mp3; sourceTree = SOURCE_ROOT; };
 		B84051551F95B3C500C02CBA /* dealButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dealButton.mp3; path = videoPoker/working/dealButton.mp3; sourceTree = SOURCE_ROOT; };
 		B84051561F95B3C500C02CBA /* pandeiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pandeiro.mp3; path = videoPoker/working/pandeiro.mp3; sourceTree = SOURCE_ROOT; };
-		B8514D641F98239000A2BD66 /* bkgPokerInv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgPokerInv.png; path = videoPoker/working/bkgPokerInv.png; sourceTree = SOURCE_ROOT; };
 		B8514D661F98305B00A2BD66 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = click.mp3; path = videoPoker/working/click.mp3; sourceTree = SOURCE_ROOT; };
 		B88BD9F01F931A9500A61501 /* bkgPoker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgPoker.png; path = videoPoker/working/bkgPoker.png; sourceTree = SOURCE_ROOT; };
 		B88BD9F11F931A9500A61501 /* btnLeTout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnLeTout.png; path = videoPoker/working/btnLeTout.png; sourceTree = SOURCE_ROOT; };
@@ -286,7 +284,6 @@
 		B8B259231F8662C0009CB3A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B8514D641F98239000A2BD66 /* bkgPokerInv.png */,
 				B88BD9F61F931A9600A61501 /* backCard.png */,
 				B88BD9F01F931A9500A61501 /* bkgPoker.png */,
 				B88BD9F21F931A9600A61501 /* btn25.png */,
@@ -475,7 +472,6 @@
 				B8166DEE1F8E66C100589206 /* Icon-180.png in Resources */,
 				B8166E1F1F8E6FBD00589206 /* 11s.png in Resources */,
 				B8B259841F86633D009CB3A6 /* 10d.png in Resources */,
-				B8514D651F98239100A2BD66 /* bkgPokerInv.png in Resources */,
 				B84051571F95B3C500C02CBA /* betChip.mp3 in Resources */,
 				B8166E0B1F8E6FBD00589206 /* 1d.png in Resources */,
 				B8B259751F86633D009CB3A6 /* 5h.png in Resources */,
@@ -699,6 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27Q5JKBNU9;
 				INFOPLIST_FILE = videoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinsgustavo.videoPoker;
@@ -713,6 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27Q5JKBNU9;
 				INFOPLIST_FILE = videoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinsgustavo.videoPoker;
