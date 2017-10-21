@@ -232,7 +232,6 @@
                         <outlet property="bg_3" destination="IE1-0p-kcF" id="Rtq-XM-1GA"/>
                         <outlet property="bg_4" destination="l3Z-Ek-reG" id="AuD-7r-qXk"/>
                         <outlet property="bg_5" destination="4ds-0l-bYq" id="OWm-h9-J5X"/>
-                        <outlet property="bkgPoker" destination="d83-8G-Qbu" id="1Wp-1F-C0n"/>
                         <outlet property="creditsLabel" destination="B9q-Lb-Z47" id="jjb-JF-7L5"/>
                         <outlet property="dealButton" destination="a15-gM-pgJ" id="Agt-Tt-p6w"/>
                         <outlet property="keep_1" destination="eZj-xN-4rS" id="Dma-rT-zLS"/>

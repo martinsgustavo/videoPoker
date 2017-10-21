@@ -199,7 +199,7 @@ class ViewController: UIViewController {
         return arrToReturn
     }
     //------------------------------------------
-    // Action pour démarrer le jeu
+    // Action pour démarrer le jeu avec les animations et les flous
     @IBAction func play(_ sender: UIButton) {
         //---
         if chances == 0 || dealButton.alpha == 0.5 {
@@ -308,6 +308,7 @@ class ViewController: UIViewController {
         return arrToReturn
     }
     //------------------------------------------
+    // Fonction pour crée toutes les cartes du jeu et après incluire dans le tableau
     func createCards(theHand: [(Int, String)]) -> [String] {
         //---
         let card_1 = "\(theHand[0].0)\(theHand[0].1).png"
@@ -319,6 +320,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Pour faire la choix au hasard
     func returnRandomHand() -> [(Int, String)] {
         //---
         var arrToReturn = [(Int, String)]()
@@ -333,6 +335,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Fonction pour verifier le main du joueur et faire l'impression de ce qu'il a gagné
     func verifyHand(hand: [(Int, String)]) {
         if pokerHands.royalFlush(hand: hand) {
             calculateHand(times: 250, handToDisplay: "QUINTE FLUSH ROYALE")
@@ -357,6 +360,7 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
+    // Fonction pour calculer combien de "chips" vous allez gagner
     func calculateHand(times: Int, handToDisplay: String) {
         credits += (times * bet)
         tempLabel.text = handToDisplay
@@ -365,6 +369,7 @@ class ViewController: UIViewController {
         userDef.setKey(theValue: credits as AnyObject, theKey: "credits")
     }
     //------------------------------------------
+    // Pour verifier si il y a crédit encore et faites apparaître le bouton rejouer si les crédits sont nuls
     func verifyIfThereIsCredit(){
         if creditsLabel.text == "CRÉDITS : 0" {
             betButton25.alpha = 0.5
@@ -372,10 +377,12 @@ class ViewController: UIViewController {
             betButtonTout.alpha = 0.5
             dealButton.alpha = 0.5
             restartButton.alpha = 1
+            //userDef.removeKey(theKey: "credits")
         }
     }
     //------------------------------------------
-    @IBAction func cardsToHold(_ sender: UIButton) { //<<<<<<<<<<
+    // Fonction guarder et montrer toutes les cartes choises pour le joueur
+    @IBAction func cardsToHold(_ sender: UIButton) {
         //---
         if !permissionToSelectCards {
             return
@@ -401,6 +408,7 @@ class ViewController: UIViewController {
         soundClickButton?.play()
     }
     //------------------------------------------
+    // Fonction pour garder le choix dans le tableau "handToAnalyse"
     func manageSelectedCards(theTag: Int, shouldAdd: Bool) {
         if shouldAdd {
             handToAnalyse[theTag] = theHand[theTag]
@@ -409,7 +417,8 @@ class ViewController: UIViewController {
         }
     }
     //------------------------------------------
-    @IBAction func betButtons(_ sender: UIButton) { //<<<<<<<<<<<<<
+    // Bouton pour faire les paris, le joueur peut parier les multiples de 25, 100 ou peut parier tout
+    @IBAction func betButtons(_ sender: UIButton) {
         //---
         if betButtonTout.alpha == 1 && betButton100.alpha == 1 && betButton25.alpha == 1 {
         soundBetButton?.play()
@@ -445,12 +454,14 @@ class ViewController: UIViewController {
         //---
     }
     //----------------------//----------------------
+    // Pour redémarrer les cartes et "tourner" les cartes
     func resetBackOfCards() {
         for back in arrOfSlotImageViews {
             back.image = UIImage(named: "backCard.png")
         }
     }
     //----------------------//----------------------
+    // Fonction pour préparer au prochain tour
     func resetCards() {
         //---
         for index in 0...4 {
@@ -464,6 +475,7 @@ class ViewController: UIViewController {
         //---
     }
     //------------------------------------------
+    // Bouton qui sera actif lorsque le joueur perd tous les crédits
     @IBAction func restart(_ sender: UIButton) {
         if restartButton.alpha == 0.5 {
             return
@@ -484,9 +496,13 @@ class ViewController: UIViewController {
             restartButton.alpha = 0.5
             //---
             soundDealButton?.play()
+            //---
+            userDef.setKey(theValue: 2000 as AnyObject, theKey: "credits")
+            //---
         }
     }
     //------------------------------------------
+    // Fonction créée pour enregistrer les crédits du joueur même s'il quitte l'application
     func manageCredit() {
     
         if !userDef.doesKeyExist(theKey: "credits"){
